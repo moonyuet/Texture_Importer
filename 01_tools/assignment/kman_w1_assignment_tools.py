@@ -244,7 +244,7 @@ ANSWER the following questions:
 
     Switching to the branch 
     
-    git add, git pull and git push the untracked files first.
+    Git Stash  (you mentioned in Q & A)
 
     e) When do you need branches?
 
