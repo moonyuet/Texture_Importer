@@ -1,6 +1,5 @@
 This is texture importer repository for Python advanced class
 
-Please review the first week assignment in ./01_tools/assignment/ folder
+Please review the second week assignment in ./02_style/kman_w2_assignment/ folder
 
-If you dont mind, you can give me some comments on the script of my texture importer (not clean up yet so everything is putting together) located 
-in ./01_tools/maya/
+I also uploaded the scripts of texture importer for both blender and maya in ./02_style/kman_w2_assignment/textureimporter folder. 
