@@ -98,14 +98,6 @@ class FileManagementDialog(QtWidgets.QDialog):
         return wrapper_creation_proc
 
 
-    def print_map_import(func):
-        def wrapper_map_import(self):
-            print("**********EXTRACTING MAPS*************")
-            func(self) 
-            print("*******MAPS IMPORTED SUCCESSFULLY**********")   
-        return wrapper_map_import
-
-
 #FUNCTION
     def show_file_dialog(self):
         import_filepath, self.selected_filter = QtWidgets.QFileDialog.getOpenFileName(self, "Select Texture", "", 
@@ -190,7 +182,8 @@ class FileManagementDialog(QtWidgets.QDialog):
         
         texture_path = self.pbr_path
         
-        pbr_list = ["ROUGH","NRM", "MTL"]
+        #pbr_list = ["ROUGH","NRM", "MTL"]
+        pbr_list = self.texture_json_import()
 
         diffuse_path = self.filepath_import.text()
         texture_path.append(diffuse_path)
@@ -204,7 +197,37 @@ class FileManagementDialog(QtWidgets.QDialog):
             texture_path.append(map_path)
 
         return texture_path
-    
+
+
+    def texture_json_import(self):
+        import json
+        
+        json_path = r"C:\Users\Kayla\Texture_Importer\03_advanced\textures.json"
+        pbr_list = []
+
+        diffuse_path = self.filepath_import.text()
+        file_split = diffuse_path.split("_")
+        extension_split = file_split[1].split(".")
+
+
+        with open(json_path) as json_file:
+            tx_data = json.load(json_file)
+            if extension_split[0] == tx_data["xtex"]["basecolor"]:
+                roughness = tx_data["xtex"]["roughness"]
+                normal = tx_data["xtex"]["normal"]
+                metallic = tx_data["xtex"]["metallic"]
+            elif extension_split[0] == tx_data["pbr"]["basecolor"]:
+                roughness = tx_data["pbr"]["roughness"]
+                normal = tx_data["pbr"]["normal"]
+                metallic = tx_data["pbr"]["metallic"]
+            else:
+                cmds.warning("Please select an image with the correct naming convention!")
+
+        pbr_list.append(roughness)
+        pbr_list.append(normal)
+        pbr_list.append(metallic)
+
+        return pbr_list
 
 #EXECUTION
 if __name__ == "__main__":

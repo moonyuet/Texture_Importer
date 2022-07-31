@@ -1,0 +1,15 @@
+{
+    "pbr":{
+        "basecolor" : "basecolor",
+        "roughness" : "roughness",
+        "normal" : "normal",
+        "metallic" : "metallic"
+
+    },
+    "xtex":{
+        "basecolor" : "BASE",
+        "roughness": "ROUGH",
+        "normal" : "NRM",
+        "metallic": "MTL"
+    }
+}

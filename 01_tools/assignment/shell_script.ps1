@@ -1,8 +1,6 @@
 
-    
+
 mkdir shell_test
-
-
     
 cd shell_test
 touch test_print.py
