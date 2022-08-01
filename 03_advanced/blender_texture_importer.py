@@ -84,7 +84,7 @@ class FileManagementDialog(QtWidgets.QDialog):
         def wrapper_creation_proc(self):
             print("*******CREATING AND ASSIGNING MATERIAL**********")
             func(self) 
-            print("*******FINISHED**********")   
+            print("*******************FINISHED*********************")   
         return wrapper_creation_proc
 
 #FUNCTIONS

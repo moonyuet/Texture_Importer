@@ -49,7 +49,7 @@ b) Find a module in your application with a lot of ifs, loops or function calls.
 
 TIP: Calls or ifs can often be replaced with loops.
 
-
+see compress_ifs_edited.py
 
 
 
