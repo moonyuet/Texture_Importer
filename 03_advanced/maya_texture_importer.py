@@ -1,4 +1,9 @@
-
+# advanced ***************************************************************************
+# content = Texture Importer for Maya
+#
+# date    = 2022-08-12
+# email   = moonyuet2008@hotmail.com
+#*******************************************************************************
 import sys
 
 from PySide2 import QtCore, QtGui, QtWidgets
@@ -49,7 +54,7 @@ class FileManagementDialog(QtWidgets.QDialog):
         self.create_layout()
         self.create_connections()
 
-#CREATE WIDGETS
+    #CREATE WIDGETS
     def create_widgets(self):
         self.imported_caption = QtWidgets.QLabel("Import Your Texture")
 
@@ -88,7 +93,7 @@ class FileManagementDialog(QtWidgets.QDialog):
         self.apply_btn.clicked.connect(self.assign_material)
         self.close_btn.clicked.connect(self.close)
 
-#DECORATOR
+    #DECORATOR
 
     def print_creation_proc(func):
         def wrapper_creation_proc(self):
@@ -98,7 +103,7 @@ class FileManagementDialog(QtWidgets.QDialog):
         return wrapper_creation_proc
 
 
-#FUNCTION
+    #FUNCTION
     def show_file_dialog(self):
         import_filepath, self.selected_filter = QtWidgets.QFileDialog.getOpenFileName(self, "Select Texture", "", 
         self.FILE_FILTERS, self.selected_filter)
@@ -177,12 +182,11 @@ class FileManagementDialog(QtWidgets.QDialog):
 
         return current_obj
 
-    
+
     def texture_path_sets(self):
         
         texture_path = self.pbr_path
         
-        #pbr_list = ["ROUGH","NRM", "MTL"]
         pbr_list = self.texture_json_import()
 
         diffuse_path = self.filepath_import.text()

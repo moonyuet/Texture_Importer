@@ -1,3 +1,9 @@
+# advanced ***************************************************************************
+# content = Texture Importer for Blender
+#
+# date    = 2022-08-12
+# email   = moonyuet2008@hotmail.com
+#*******************************************************************************
 import sys
 
 import bpy
