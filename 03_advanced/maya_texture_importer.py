@@ -172,7 +172,7 @@ class FileManagementDialog(QtWidgets.QDialog):
 
             return cmds.sets(target_obj, forceElement = str(shader_grp))
 
-    
+
     def target_object(self):
         current_obj = cmds.ls(selection = True)
 

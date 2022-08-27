@@ -1,5 +1,8 @@
 This is texture importer repository for Python advanced class
 
-Please review the second week assignment in ./02_style/kman_w2_assignment/ folder
+The final script of the Texture Importer located in the 04_ui folder
 
-I also uploaded the scripts of texture importer for both blender and maya in ./02_style/kman_w2_assignment/textureimporter folder. 
+#### Step for running the Texture Importer in maya ####
+1. Run the set_env.bat to install environment variable specifically for the Texture Importer
+2. Run the maya_shelf.py in your maya script editor and it would create shelf menu for your script
+3. Enjoy the plugin
